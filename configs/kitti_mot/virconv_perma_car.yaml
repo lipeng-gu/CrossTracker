@@ -12,7 +12,7 @@ ckpt: "output/checkpoint.pth"
 
 mode: test
 class_name: "Car"
-detector2d: "permatrack"
+detector2d: "perma"
 detector3d: "virconv"
 
 class_map:
