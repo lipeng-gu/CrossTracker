@@ -64,17 +64,17 @@ CrossTracker
 ## Useage
 ### 2) Generate the training data
 ```bash
-python kitti_gen.py
+python tools/kitti_gen.py
 ```
 
 ### 2) Train M$^3$ (multi-modal modeling)
 ```bash
-python kitti_train.py
+python tools/kitti_train.py
 ```
 
 ### 3) Run 3D multi-object tracking
 ```bash
-python kitti_mot.py
+python tools/kitti_mot.py  --cfg_file configs/kitti_mot...
 ```
 
 

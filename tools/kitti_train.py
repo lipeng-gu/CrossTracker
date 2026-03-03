@@ -176,7 +176,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CrossTracker Training")
     parser.add_argument(
         "--cfg_file", type=str,
-        default="config/kitti_train.yaml"
+        default="configs/kitti_train.yaml"
     )
     args = parser.parse_args()
 

@@ -10,7 +10,7 @@ detections_path: "data/KITTI/detections"
 save_path: 'output/tracking_results'
 ckpt: "output/checkpoint.pth"
 
-mode: val
+mode: test
 class_name: "Car"
 detector2d: "rrc"
 detector3d: "pointgnn"
