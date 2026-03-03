@@ -1,0 +1,66 @@
+seed: 66
+tracking_seqs:
+  "val": [ 1,6,8,10,12,13,14,15,16,18,19 ]
+  "train": [ 0, 2, 3, 4, 5, 7, 9, 11, 17, 20 ]
+  "trainval": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+  "test": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 ]
+
+dataset_path: "data/KITTI/tracking"
+detections_path: "data/KITTI/detections"
+save_path: 'output/tracking_results'
+ckpt: "output/checkpoint.pth"
+
+mode: test
+class_name: "Car"
+detector2d: "permatrack"
+detector3d: "casa"
+
+class_map:
+  Pedestrian: 1
+  Car: 2
+  Cyclist: 3
+
+embed_dim: 512
+img_size: [ 1242, 375 ]
+
+use_ifm: True
+use_pfm: True
+use_gfm: True
+
+cross_correction:
+  step1_a: True
+  step1_b: True
+  step2_c: True
+  step2_d: True
+  step3_e: True
+
+input_score:
+  2d: 0.3  # 0.3 for all detector2d
+  3d: -0.5  # -0.5 for casa and virconv and 0 for others
+
+# thresholds for each modality (stage-1)
+thr_stage1:  # best for car
+  m3_score: 0.5  # 0.5
+  sgc_score3d:
+    strict: 3  # 3
+    loose: 8  # 8
+  sgc_score2d:
+    strict: 0.7  # 0.7
+    loose: 1  # 1
+  max_age: 3  # 3
+  min_hits: 3
+
+# thresholds for cross correction (stage-2)
+thr_stage2:  # best for car
+  iou_s1: 0.5  # 0.5
+  iou_s2: 0.05  # 0.05
+  iou_s3: 0.5  # 0.5
+  iou_in: 0.5  # 0.5
+  iou_out: 0.4  # 0.4
+  min_hits: 2  # 2
+
+# KF parameters
+state_func_covariance: 100
+measure_func_covariance: 0.001
+prediction_score_decay: 0.02
+LiDAR_scanning_frequency: 10
