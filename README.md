@@ -5,7 +5,7 @@
   <img src="overview.png"/>
 </div>
 
-- **M$^3$ module**: learns a robust tracking constraint by modeling **image features (IFM)**, **point cloud features (PFM)**, and **planar geometry features (GFM)**, then predicts cross-frame consistency probability.
+- **M³ module**: learns a robust tracking constraint by modeling **image features (IFM)**, **point cloud features (PFM)**, and **planar geometry features (GFM)**, then predicts cross-frame consistency probability.
 - **Stage-1 (C-TG)**: independently generates coarse trajectories for **camera** and **LiDAR**.
 - **Stage-2 (TF)**: performs **trajectory fusion** and **mutual refinement** between modalities through **cross correction**, improving robustness to false/missed detections.
 
@@ -67,7 +67,7 @@ CrossTracker
 python tools/kitti_gen.py
 ```
 
-### 2) Train M$^3$ (multi-modal modeling)
+### 2) Train M³ (multi-modal modeling)
 ```bash
 python tools/kitti_train.py
 ```
