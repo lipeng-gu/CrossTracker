@@ -74,7 +74,7 @@ python tools/kitti_train.py
 
 ### 3) Run 3D multi-object tracking
 ```bash
-python tools/kitti_mot.py  --cfg_file configs/kitti_mot...
+python tools/kitti_mot.py  --cfg_file configs/kitti_mot/...
 ```
 
 
